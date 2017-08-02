@@ -1,7 +1,7 @@
 public class Champions {
-  String champName = null;
+  String championName = null;
   public Champions (String name){
-    champName = name;
+    championName = name;
   }
   public static void main(String[] args) {
 

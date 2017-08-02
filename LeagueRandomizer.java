@@ -3,47 +3,13 @@ import java.util.*;
 public class LeagueRandomizer {
   public static void main(String[] args)
   {
-    Random rng = new Random();
-
-    //champ
-    ArrayList<Champions> champions = championArrayListCreator();
-    int championsRNG = rng.nextInt(champions.size()-1);
-    System.out.println(champions.get(championsRNG).championName);
-
-    //lane
-    ArrayList<String> lanes = new ArrayList<>(Arrays.asList("Top","Mid","Bot","Support","Jungle"));
-    int laneRNG = rng.nextInt(lanes.size()-1);
-    System.out.println(lanes.get(laneRNG));
-
-    //summoners
-    ArrayList<String> summoners = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal","Smite"));
-    for (int i = 0;i < 2 ;i++) {
-      int summonersRNG = rng.nextInt(summoners.size()-1);
-      System.out.print(summoners.get(summonersRNG));
-      if (i < 1){
-        System.out.print(" + ");
+    Scanner sc = new Scanner(System.in);
+    functionality();
+    while(true) {
+      if (sc.next().equals("r")) {
+        functionality();
       }
-      summoners.remove(summonersRNG);
     }
-    System.out.println();
-
-    //ability max
-    ArrayList<String> maxAbilities = new ArrayList<>(Arrays.asList("Q Max","W Max","E Max"));
-    int maxAbilitiesRNG = rng.nextInt(maxAbilities.size()-1);
-    System.out.println(maxAbilities.get(maxAbilitiesRNG));
-
-    //items
-    ArrayList<Items> items = itemArrayListCreator();
-    for (int i = 0;i < 6 ; i++) {
-      int itemsRNG = rng.nextInt(items.size()-1);
-      System.out.print(items.get(itemsRNG).itemName);
-      if (i < 5){
-        System.out.print(" + ");
-      }
-      items.remove(itemsRNG);
-    }
-    System.out.println();
-
   }
   public static ArrayList<Items> itemArrayListCreator() {
       ArrayList<Items> itemList = new ArrayList();
@@ -278,5 +244,48 @@ public class LeagueRandomizer {
     championList.add(new Champions("Zyra"));
 
     return championList;
+  }
+
+  public static void functionality() {
+    Random rng = new Random();
+    //champ
+    ArrayList<Champions> champions = championArrayListCreator();
+    int championsRNG = rng.nextInt(champions.size()-1);
+    System.out.println(champions.get(championsRNG).championName);
+
+    //lane
+    ArrayList<String> lanes = new ArrayList<>(Arrays.asList("Top","Mid","Bot","Support","Jungle"));
+    int laneRNG = rng.nextInt(lanes.size()-1);
+    System.out.println(lanes.get(laneRNG));
+
+    //summoners
+    ArrayList<String> summoners = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal","Smite"));
+    for (int i = 0;i < 2 ;i++) {
+      int summonersRNG = rng.nextInt(summoners.size()-1);
+      System.out.print(summoners.get(summonersRNG));
+      if (i < 1){
+        System.out.print(" + ");
+      }
+      summoners.remove(summonersRNG);
+    }
+    System.out.println();
+
+    //ability max
+    ArrayList<String> maxAbilities = new ArrayList<>(Arrays.asList("Q Max","W Max","E Max"));
+    int maxAbilitiesRNG = rng.nextInt(maxAbilities.size()-1);
+    System.out.println(maxAbilities.get(maxAbilitiesRNG));
+
+    //items
+    ArrayList<Items> items = itemArrayListCreator();
+    for (int i = 0;i < 6 ; i++) {
+      int itemsRNG = rng.nextInt(items.size()-1);
+      System.out.print(items.get(itemsRNG).itemName);
+      if (i < 5){
+        System.out.print(" + ");
+      }
+      items.remove(itemsRNG);
+    }
+    System.out.println();
+    System.out.println("Type r to reroll:");
   }
 }

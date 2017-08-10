@@ -85,6 +85,7 @@ public class LeagueRandomizer {
       itemList.add(new Items("Rod of Ages"));
       itemList.add(new Items("Runaan's Hurricane"));
       itemList.add(new Items("Rylai's Crystal Scepter"));
+      itemList.add(new Items("Sorcerer's Shoes"));
       itemList.add(new Items("Spirit Visage"));
       itemList.add(new Items("Statikk Shiv"));
       itemList.add(new Items("Sterak's Gage"));
@@ -102,6 +103,46 @@ public class LeagueRandomizer {
       itemList.add(new Items("Zeke's Convergance"));
       itemList.add(new Items("Zhonya's Hourglass"));
       itemList.add(new Items("Zz'rot Portal"));
+
+      int indexOne = 0;
+      int indexTwo = 0;
+
+      for (int i = 0; i < itemList.size(); i++) {
+        if (itemList.get(i).getItemName().equals("Red Enchantment: Bloodrazor")) {
+          indexOne = i;
+        }
+        if (itemList.get(i).getItemName().equals("Blue Enchantment: Warrior")) {
+          indexTwo = i;
+        }
+      }
+
+      for (int i = indexOne; i <= indexTwo; i++){
+        itemList.get(i).setIsJungle(true);
+      }
+
+      for (int i = 0; i < itemList.size(); i++) {
+        if (itemList.get(i).getItemName().equals("Berserker's Greaves")) {
+          itemList.get(i).setIsBoot(true);
+        }
+        if (itemList.get(i).getItemName().equals("Boots of Mobility")) {
+          itemList.get(i).setIsBoot(true);
+        }
+        if (itemList.get(i).getItemName().equals("Boots of Swiftness")) {
+          itemList.get(i).setIsBoot(true);
+        }
+        if (itemList.get(i).getItemName().equals("Ionian Boots Of Lucidity")) {
+          itemList.get(i).setIsBoot(true);
+        }
+        if (itemList.get(i).getItemName().equals("Mercury's Treads")) {
+          itemList.get(i).setIsBoot(true);
+        }
+        if (itemList.get(i).getItemName().equals("Ninja Tabi")) {
+          itemList.get(i).setIsBoot(true);
+        }
+        if (itemList.get(i).getItemName().equals("Sorcerer's Shoes")) {
+          itemList.get(i).setIsBoot(true);
+        }
+      }
 
       return itemList;
   }
@@ -246,6 +287,36 @@ public class LeagueRandomizer {
     return championList;
   }
 
+  public static void items() {
+    //items randomizer
+    ArrayList<Items> items = itemArrayListCreator();
+    ArrayList<Items> boots = new ArrayList();
+    ArrayList<Items> jungle = new ArrayList();
+
+    //create array of boots
+    for (int i = 0; i < items.size(); i ++) {
+      if (items.get(i).getIsBoot().equals(true)) {
+        boots.add(items.get(i));
+      }
+    }
+
+    //create array of jungle items
+    for (int i = 0; i < items.size(); i ++) {
+      if (items.get(i).getIsJungle().equals(true)) {
+        jungle.add(items.get(i));
+      }
+    }
+    
+    for (int i = 0; i < 6 ; i++) {
+      int itemsRNG = rng.nextInt(items.size()-1);
+      System.out.print(items.get(itemsRNG).itemName);
+      if (i < 5){
+        System.out.print(" + ");
+      }
+      items.remove(itemsRNG);
+    }
+  }
+
   public static void functionality() {
     Random rng = new Random();
     //champ
@@ -275,16 +346,8 @@ public class LeagueRandomizer {
     int maxAbilitiesRNG = rng.nextInt(maxAbilities.size()-1);
     System.out.println(maxAbilities.get(maxAbilitiesRNG));
 
-    //items
-    ArrayList<Items> items = itemArrayListCreator();
-    for (int i = 0;i < 6 ; i++) {
-      int itemsRNG = rng.nextInt(items.size()-1);
-      System.out.print(items.get(itemsRNG).itemName);
-      if (i < 5){
-        System.out.print(" + ");
-      }
-      items.remove(itemsRNG);
-    }
+    items();
+
     System.out.println();
     System.out.println("Type r to reroll:");
   }

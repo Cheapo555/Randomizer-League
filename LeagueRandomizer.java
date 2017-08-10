@@ -59,7 +59,7 @@ public class LeagueRandomizer {
       itemList.add(new Items("Infinity Edge"));
       itemList.add(new Items("Ionian Boots Of Lucidity"));
       itemList.add(new Items("Knight's Vow"));
-      itemList.add(new Items("Liandrys Torment"));
+      itemList.add(new Items("Liandry's Torment"));
       itemList.add(new Items("Lich Bane"));
       itemList.add(new Items("Locket Of The Iron Solari"));
       itemList.add(new Items("Lord Dominik's Regards"));

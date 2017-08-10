@@ -79,7 +79,7 @@ public class LeagueRandomizer {
       itemList.add(new Items("Rabidon's Deathcap"));
       itemList.add(new Items("Randiun's Omen"));
       itemList.add(new Items("Rapid Firecannon"));
-      itemList.add(new Items("RavenousHydra"));
+      itemList.add(new Items("Ravenous Hydra"));
       itemList.add(new Items("Redemption"));
       itemList.add(new Items("Righteous Glory"));
       itemList.add(new Items("Rod of Ages"));
@@ -219,7 +219,7 @@ public class LeagueRandomizer {
     championList.add(new Champions("Malzahar"));
     championList.add(new Champions("Maokai"));
     championList.add(new Champions("Master Yi"));
-    championList.add(new Champions("missFortune"));
+    championList.add(new Champions("Miss Fortune"));
     championList.add(new Champions("Mordekaiser"));
     championList.add(new Champions("Morgana"));
     championList.add(new Champions("Nami"));
@@ -287,66 +287,122 @@ public class LeagueRandomizer {
     return championList;
   }
 
-  public static void items() {
+  public static void items(Boolean hasSimte) {
     //items randomizer
+    Random rng = new Random();
+    String item = null;
     ArrayList<Items> items = itemArrayListCreator();
     ArrayList<Items> boots = new ArrayList();
     ArrayList<Items> jungle = new ArrayList();
+    ArrayList<Items> finalList = new ArrayList(6);
 
     //create array of boots
     for (int i = 0; i < items.size(); i ++) {
       if (items.get(i).getIsBoot().equals(true)) {
         boots.add(items.get(i));
+        items.remove(i);
+        i--;
       }
     }
+
+    //get a random boot
+    int bootRNG = rng.nextInt(boots.size());
+    finalList.add(boots.get(bootRNG));
 
     //create array of jungle items
     for (int i = 0; i < items.size(); i ++) {
       if (items.get(i).getIsJungle().equals(true)) {
         jungle.add(items.get(i));
+        items.remove(i);
+        i--;
       }
     }
-    
-    for (int i = 0; i < 6 ; i++) {
-      int itemsRNG = rng.nextInt(items.size()-1);
-      System.out.print(items.get(itemsRNG).itemName);
-      if (i < 5){
+
+    //get a random jungle item and other items if has smite
+    if (hasSimte) {
+      int jungleRNG = rng.nextInt(jungle.size());
+      finalList.add(jungle.get(jungleRNG));
+      for (int i = 0; i < 4; i++) {
+        int itemsRNG = rng.nextInt(items.size());
+        finalList.add(items.get(itemsRNG));
+        items.remove(itemsRNG);
+      }
+    }
+    else {
+      //get random set of items
+      for (int i = 0;i < 5; i++) {
+        int itemsRNG = rng.nextInt(items.size());
+        finalList.add(items.get(itemsRNG));
+        items.remove(itemsRNG);
+      }
+    }
+
+    for (int i = 0; i < 6; i++) {
+      int itemOrderRNG = rng.nextInt(finalList.size());
+      System.out.print(finalList.get(itemOrderRNG).getItemName());
+      finalList.remove(itemOrderRNG);
+      if(i < 5) {
         System.out.print(" + ");
       }
-      items.remove(itemsRNG);
     }
+    System.out.println();
   }
 
   public static void functionality() {
     Random rng = new Random();
+    String champion = null;
+    String lane = null;
+    String summoner = null;
+    String maxAbility = null;
+    Boolean jungle = false;
+
+    System.out.println();
+
     //champ
     ArrayList<Champions> champions = championArrayListCreator();
-    int championsRNG = rng.nextInt(champions.size()-1);
-    System.out.println(champions.get(championsRNG).championName);
+    int championsRNG = rng.nextInt(champions.size());
+    champion = champions.get(championsRNG).championName;
+    System.out.println(champion);
 
     //lane
     ArrayList<String> lanes = new ArrayList<>(Arrays.asList("Top","Mid","Bot","Support","Jungle"));
-    int laneRNG = rng.nextInt(lanes.size()-1);
-    System.out.println(lanes.get(laneRNG));
+    int laneRNG = rng.nextInt(lanes.size());
+    lane = lanes.get(laneRNG);
+    if (lane.equals("Jungle")) {
+      jungle = true;
+    }
+    System.out.println(lane);
 
     //summoners
-    ArrayList<String> summoners = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal","Smite"));
-    for (int i = 0;i < 2 ;i++) {
-      int summonersRNG = rng.nextInt(summoners.size()-1);
-      System.out.print(summoners.get(summonersRNG));
-      if (i < 1){
-        System.out.print(" + ");
-      }
-      summoners.remove(summonersRNG);
+    if (jungle) {
+      ArrayList<String> summonersSmite = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal"));
+      int summonersRNGSmite = rng.nextInt(summonersSmite.size());
+      summoner = "Smite + " + summonersSmite.get(summonersRNGSmite);
+      System.out.print(summoner);
     }
+    else {
+      for (int i = 0;i < 2 ;i++) {
+        ArrayList<String> summoners = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal"));
+        int summonersRNG = rng.nextInt(summoners.size());
+        summonersRNG = rng.nextInt(summoners.size());
+        summoner = summoners.get(summonersRNG);
+        System.out.print(summoner);
+        if (i < 1){
+          System.out.print(" + ");
+        }
+        summoners.remove(summonersRNG);
+      }
+    }
+
     System.out.println();
 
     //ability max
     ArrayList<String> maxAbilities = new ArrayList<>(Arrays.asList("Q Max","W Max","E Max"));
-    int maxAbilitiesRNG = rng.nextInt(maxAbilities.size()-1);
-    System.out.println(maxAbilities.get(maxAbilitiesRNG));
+    int maxAbilitiesRNG = rng.nextInt(maxAbilities.size());
+    maxAbility = maxAbilities.get(maxAbilitiesRNG);
+    System.out.println(maxAbility);
 
-    items();
+    items(jungle);
 
     System.out.println();
     System.out.println("Type r to reroll:");

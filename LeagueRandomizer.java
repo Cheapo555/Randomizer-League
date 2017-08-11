@@ -290,6 +290,8 @@ public class LeagueRandomizer {
     //items randomizer
     Random rng = new Random();
     String item = null;
+    int size = 0;
+
     ArrayList<Items> items = itemArrayListCreator();
     ArrayList<Items> boots = new ArrayList();
     ArrayList<Items> jungle = new ArrayList();
@@ -346,7 +348,7 @@ public class LeagueRandomizer {
     //get a random jungle item and other items if has smite
     if (hasSmite) {
       int jungleRNG = rng.nextInt(jungle.size());
-      finalList.add(jungle.get(jungleRNG));
+      System.out.print(jungle.get(jungleRNG).getItemName() + " + ");
       for (int i = 0; i < 4; i++) {
         int itemsRNG = rng.nextInt(items.size());
         finalList.add(items.get(itemsRNG));
@@ -362,11 +364,12 @@ public class LeagueRandomizer {
       }
     }
 
-    for (int i = 0; i < 6; i++) {
+    size = finalList.size();
+    for (int i = 0; i < size; i++) {
       int itemOrderRNG = rng.nextInt(finalList.size());
       System.out.print(finalList.get(itemOrderRNG).getItemName());
       finalList.remove(itemOrderRNG);
-      if(i < 5) {
+      if(i < (size - 1)) {
         System.out.print(" + ");
       }
     }
@@ -381,6 +384,11 @@ public class LeagueRandomizer {
     String maxAbility = null;
     Boolean jungle = false;
 
+    ArrayList<String> lanes = new ArrayList<>(Arrays.asList("Top","Mid","Bot","Support","Jungle"));
+    ArrayList<String> summoners = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal"));
+    ArrayList<Integer> masteries = new ArrayList();
+    ArrayList<String> maxAbilities = new ArrayList<>(Arrays.asList("Q Max","W Max","E Max"));
+
     System.out.println();
 
     //champ
@@ -390,7 +398,6 @@ public class LeagueRandomizer {
     System.out.println(champion.getChampionName());
 
     //lane
-    ArrayList<String> lanes = new ArrayList<>(Arrays.asList("Top","Mid","Bot","Support","Jungle"));
     int laneRNG = rng.nextInt(lanes.size());
     lane = lanes.get(laneRNG);
     if (lane.equals("Jungle")) {
@@ -400,22 +407,19 @@ public class LeagueRandomizer {
 
     //summoners
     if (jungle) {
-      ArrayList<String> summonersSmite = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal"));
-      int summonersRNGSmite = rng.nextInt(summonersSmite.size());
-      summoner = "Smite + " + summonersSmite.get(summonersRNGSmite);
+      int summonersRNGSmite = rng.nextInt(summoners.size());
+      summoner = "Smite + " + summoners.get(summonersRNGSmite);
       System.out.print(summoner);
     }
     else {
       for (int i = 0;i < 2 ;i++) {
-        ArrayList<String> summoners = new ArrayList<>(Arrays.asList("Flash","Ghost","Cleanse","Teleport","Ignite","Barrier","Exhaust","Heal"));
         int summonersRNG = rng.nextInt(summoners.size());
-        summonersRNG = rng.nextInt(summoners.size());
         summoner = summoners.get(summonersRNG);
+        summoners.remove(summonersRNG);
         System.out.print(summoner);
         if (i < 1){
           System.out.print(" + ");
         }
-        summoners.remove(summonersRNG);
       }
     }
     System.out.println();
@@ -428,7 +432,6 @@ public class LeagueRandomizer {
     a = aRNG;
     b = 12 - a;
 
-    ArrayList<Integer> masteries = new ArrayList();
     masteries.add(a);
     masteries.add(b);
     masteries.add(c);
@@ -446,7 +449,6 @@ public class LeagueRandomizer {
     System.out.println(" ");
 
     //ability max
-    ArrayList<String> maxAbilities = new ArrayList<>(Arrays.asList("Q Max","W Max","E Max"));
     int maxAbilitiesRNG = rng.nextInt(maxAbilities.size());
     maxAbility = maxAbilities.get(maxAbilitiesRNG);
     System.out.println(maxAbility);

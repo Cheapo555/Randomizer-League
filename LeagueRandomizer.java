@@ -150,144 +150,143 @@ public class LeagueRandomizer {
   public static ArrayList<Champions> championArrayListCreator() {
     ArrayList<Champions> championList = new ArrayList();
 
-    championList.add(new Champions("Aatrox"));
-    championList.add(new Champions("Ahri"));
-    championList.add(new Champions("Akali"));
-    championList.add(new Champions("Alistar"));
-    championList.add(new Champions("Amumu"));
-    championList.add(new Champions("Anivia"));
-    championList.add(new Champions("Annie"));
-    championList.add(new Champions("Ashe"));
-    championList.add(new Champions("Aurelion Sol"));
-    championList.add(new Champions("Azir"));
-    championList.add(new Champions("Bard"));
-    championList.add(new Champions("Blitzcrank"));
-    championList.add(new Champions("Brand"));
-    championList.add(new Champions("Braum"));
-    championList.add(new Champions("Caitlyn"));
-    championList.add(new Champions("Camille"));
-    championList.add(new Champions("Cassiopeia"));
-    championList.add(new Champions("Cho’Gath"));
-    championList.add(new Champions("Corki"));
-    championList.add(new Champions("Darius"));
-    championList.add(new Champions("Diana"));
-    championList.add(new Champions("Dr. Mundo"));
-    championList.add(new Champions("Draven"));
-    championList.add(new Champions("Ekko"));
-    championList.add(new Champions("Elise"));
-    championList.add(new Champions("Evelynn"));
-    championList.add(new Champions("Ezreal"));
-    championList.add(new Champions("Fiddlesticks"));
-    championList.add(new Champions("Fiora"));
-    championList.add(new Champions("Fizz"));
-    championList.add(new Champions("Galio"));
-    championList.add(new Champions("Gangplank"));
-    championList.add(new Champions("Garen"));
-    championList.add(new Champions("Gnar"));
-    championList.add(new Champions("Gragas"));
-    championList.add(new Champions("Graves"));
-    championList.add(new Champions("Hecarim"));
-    championList.add(new Champions("Heimerdinger"));
-    championList.add(new Champions("Illaoi"));
-    championList.add(new Champions("Irelia"));
-    championList.add(new Champions("Ivern"));
-    championList.add(new Champions("Janna"));
-    championList.add(new Champions("Jarvan IV"));
-    championList.add(new Champions("Jax"));
-    championList.add(new Champions("Jayce"));
-    championList.add(new Champions("Jhin"));
-    championList.add(new Champions("Jinx"));
-    championList.add(new Champions("Kalista"));
-    championList.add(new Champions("Karma"));
-    championList.add(new Champions("Karthus"));
-    championList.add(new Champions("Kassadin"));
-    championList.add(new Champions("Katarina"));
-    championList.add(new Champions("Kayle"));
-    championList.add(new Champions("Kennen"));
-    championList.add(new Champions("Kha’Zix"));
-    championList.add(new Champions("Kindred"));
-    championList.add(new Champions("Kled"));
-    championList.add(new Champions("Kog’Maw"));
-    championList.add(new Champions("LeBlanc"));
-    championList.add(new Champions("Lee Sin"));
-    championList.add(new Champions("Leona"));
-    championList.add(new Champions("Lissandra"));
-    championList.add(new Champions("Lucian"));
-    championList.add(new Champions("Lulu"));
-    championList.add(new Champions("Lux"));
-    championList.add(new Champions("Malphite"));
-    championList.add(new Champions("Malzahar"));
-    championList.add(new Champions("Maokai"));
-    championList.add(new Champions("Master Yi"));
-    championList.add(new Champions("Miss Fortune"));
-    championList.add(new Champions("Mordekaiser"));
-    championList.add(new Champions("Morgana"));
-    championList.add(new Champions("Nami"));
-    championList.add(new Champions("Nasus"));
-    championList.add(new Champions("Nautilus"));
-    championList.add(new Champions("Nidalee"));
-    championList.add(new Champions("Nocturne"));
-    championList.add(new Champions("Nunu"));
-    championList.add(new Champions("Olaf"));
-    championList.add(new Champions("Orianna"));
-    championList.add(new Champions("Pantheon"));
-    championList.add(new Champions("Poppy"));
-    championList.add(new Champions("Quinn"));
-    championList.add(new Champions("Rammus"));
-    championList.add(new Champions("Rek’Sai"));
-    championList.add(new Champions("Rengar"));
-    championList.add(new Champions("Rengar"));
-    championList.add(new Champions("Riven"));
-    championList.add(new Champions("Rumble"));
-    championList.add(new Champions("Ryze"));
-    championList.add(new Champions("Sejuani"));
-    championList.add(new Champions("Shaco"));
-    championList.add(new Champions("Shen"));
-    championList.add(new Champions("Shyvana"));
-    championList.add(new Champions("Singed"));
-    championList.add(new Champions("Sion"));
-    championList.add(new Champions("Sivir"));
-    championList.add(new Champions("Skarner"));
-    championList.add(new Champions("Sona"));
-    championList.add(new Champions("Soraka"));
-    championList.add(new Champions("Swain"));
-    championList.add(new Champions("Tahm Kench"));
-    championList.add(new Champions("Taliyah"));
-    championList.add(new Champions("Talon"));
-    championList.add(new Champions("Taric"));
-    championList.add(new Champions("Teemo"));
-    championList.add(new Champions("Thresh"));
-    championList.add(new Champions("Tristana"));
-    championList.add(new Champions("Trundle"));
-    championList.add(new Champions("Tryndamere"));
-    championList.add(new Champions("Twisted Fate"));
-    championList.add(new Champions("Twitch"));
-    championList.add(new Champions("Udyr"));
-    championList.add(new Champions("Urgot"));
-    championList.add(new Champions("Varus"));
-    championList.add(new Champions("Vayne"));
-    championList.add(new Champions("Veigar"));
-    championList.add(new Champions("Vel’Koz"));
-    championList.add(new Champions("Vi"));
-    championList.add(new Champions("Viktor"));
-    championList.add(new Champions("Vladmir"));
-    championList.add(new Champions("Volibear"));
-    championList.add(new Champions("Warwick"));
-    championList.add(new Champions("Wukong"));
-    championList.add(new Champions("Xerath"));
-    championList.add(new Champions("Xin Zhao"));
-    championList.add(new Champions("Yasuo"));
-    championList.add(new Champions("Yorick"));
-    championList.add(new Champions("Zac"));
-    championList.add(new Champions("Zed"));
-    championList.add(new Champions("Ziggs"));
-    championList.add(new Champions("Zilean"));
-    championList.add(new Champions("Zyra"));
+    championList.add(new Champions("Aatrox",true));
+    championList.add(new Champions("Ahri",false));
+    championList.add(new Champions("Akali",true));
+    championList.add(new Champions("Alistar",true));
+    championList.add(new Champions("Amumu",true));
+    championList.add(new Champions("Anivia",false));
+    championList.add(new Champions("Annie",false));
+    championList.add(new Champions("Ashe",false));
+    championList.add(new Champions("Aurelion Sol",false));
+    championList.add(new Champions("Azir",false));
+    championList.add(new Champions("Bard",false));
+    championList.add(new Champions("Blitzcrank",true));
+    championList.add(new Champions("Brand",false));
+    championList.add(new Champions("Braum",true));
+    championList.add(new Champions("Caitlyn",false));
+    championList.add(new Champions("Camille",true));
+    championList.add(new Champions("Cassiopeia",false));
+    championList.add(new Champions("Cho’Gath",true));
+    championList.add(new Champions("Corki",false));
+    championList.add(new Champions("Darius",true));
+    championList.add(new Champions("Diana",false));
+    championList.add(new Champions("Dr. Mundo",true));
+    championList.add(new Champions("Draven",false));
+    championList.add(new Champions("Ekko",true));
+    championList.add(new Champions("Elise",false));
+    championList.add(new Champions("Evelynn",true));
+    championList.add(new Champions("Ezreal",false));
+    championList.add(new Champions("Fiddlesticks",false));
+    championList.add(new Champions("Fiora",true));
+    championList.add(new Champions("Fizz",true));
+    championList.add(new Champions("Galio",true));
+    championList.add(new Champions("Gangplank",true));
+    championList.add(new Champions("Garen",true));
+    championList.add(new Champions("Gnar",false));
+    championList.add(new Champions("Gragas",true));
+    championList.add(new Champions("Graves",false));
+    championList.add(new Champions("Hecarim",false));
+    championList.add(new Champions("Heimerdinger",false));
+    championList.add(new Champions("Illaoi",true));
+    championList.add(new Champions("Irelia",true));
+    championList.add(new Champions("Ivern",false));
+    championList.add(new Champions("Janna",false));
+    championList.add(new Champions("Jarvan IV",true));
+    championList.add(new Champions("Jax",true));
+    championList.add(new Champions("Jayce",false));
+    championList.add(new Champions("Jhin",false));
+    championList.add(new Champions("Jinx",false));
+    championList.add(new Champions("Kalista",false));
+    championList.add(new Champions("Karma",false));
+    championList.add(new Champions("Karthus",false));
+    championList.add(new Champions("Kassadin",true));
+    championList.add(new Champions("Katarina",true));
+    championList.add(new Champions("Kayle",false));
+    championList.add(new Champions("Kennen",false));
+    championList.add(new Champions("Kha’Zix",true));
+    championList.add(new Champions("Kindred",false));
+    championList.add(new Champions("Kled",true));
+    championList.add(new Champions("Kog’Maw",false));
+    championList.add(new Champions("LeBlanc",false));
+    championList.add(new Champions("Lee Sin",true));
+    championList.add(new Champions("Leona",true));
+    championList.add(new Champions("Lissandra",false));
+    championList.add(new Champions("Lucian",false));
+    championList.add(new Champions("Lulu",false));
+    championList.add(new Champions("Lux",false));
+    championList.add(new Champions("Malphite",true));
+    championList.add(new Champions("Malzahar",false));
+    championList.add(new Champions("Maokai",true));
+    championList.add(new Champions("Master Yi",true));
+    championList.add(new Champions("Miss Fortune",false));
+    championList.add(new Champions("Mordekaiser",true));
+    championList.add(new Champions("Morgana",false));
+    championList.add(new Champions("Nami",false));
+    championList.add(new Champions("Nasus",true));
+    championList.add(new Champions("Nautilus",true));
+    championList.add(new Champions("Nidalee",false));
+    championList.add(new Champions("Nocturne",true));
+    championList.add(new Champions("Nunu",true));
+    championList.add(new Champions("Olaf",true));
+    championList.add(new Champions("Orianna",false));
+    championList.add(new Champions("Pantheon",true));
+    championList.add(new Champions("Poppy",true));
+    championList.add(new Champions("Quinn",false));
+    championList.add(new Champions("Rammus",true));
+    championList.add(new Champions("Rek’Sai",true));
+    championList.add(new Champions("Rengar",true));
+    championList.add(new Champions("Riven",true));
+    championList.add(new Champions("Rumble",true));
+    championList.add(new Champions("Ryze",false));
+    championList.add(new Champions("Sejuani",true));
+    championList.add(new Champions("Shaco",true));
+    championList.add(new Champions("Shen",true));
+    championList.add(new Champions("Shyvana",true));
+    championList.add(new Champions("Singed",true));
+    championList.add(new Champions("Sion",true));
+    championList.add(new Champions("Sivir",false));
+    championList.add(new Champions("Skarner",true));
+    championList.add(new Champions("Sona",false));
+    championList.add(new Champions("Soraka",false));
+    championList.add(new Champions("Swain",false));
+    championList.add(new Champions("Tahm Kench",true));
+    championList.add(new Champions("Taliyah",false));
+    championList.add(new Champions("Talon",true));
+    championList.add(new Champions("Taric",true));
+    championList.add(new Champions("Teemo",false));
+    championList.add(new Champions("Thresh",false));
+    championList.add(new Champions("Tristana",false));
+    championList.add(new Champions("Trundle",true));
+    championList.add(new Champions("Tryndamere",true));
+    championList.add(new Champions("Twisted Fate",false));
+    championList.add(new Champions("Twitch",false));
+    championList.add(new Champions("Udyr",true));
+    championList.add(new Champions("Urgot",false));
+    championList.add(new Champions("Varus",false));
+    championList.add(new Champions("Vayne",false));
+    championList.add(new Champions("Veigar",false));
+    championList.add(new Champions("Vel’Koz",false));
+    championList.add(new Champions("Vi",true));
+    championList.add(new Champions("Viktor",false));
+    championList.add(new Champions("Vladmir",false));
+    championList.add(new Champions("Volibear",true));
+    championList.add(new Champions("Warwick",true));
+    championList.add(new Champions("Wukong",true));
+    championList.add(new Champions("Xerath",false));
+    championList.add(new Champions("Xin Zhao",true));
+    championList.add(new Champions("Yasuo",true));
+    championList.add(new Champions("Yorick",true));
+    championList.add(new Champions("Zac",true));
+    championList.add(new Champions("Zed",true));
+    championList.add(new Champions("Ziggs",false));
+    championList.add(new Champions("Zilean",false));
+    championList.add(new Champions("Zyra",false));
 
     return championList;
   }
 
-  public static void items(Boolean hasSimte) {
+  public static void items(Boolean hasSmite, Champions champion) {
     //items randomizer
     Random rng = new Random();
     String item = null;
@@ -295,6 +294,32 @@ public class LeagueRandomizer {
     ArrayList<Items> boots = new ArrayList();
     ArrayList<Items> jungle = new ArrayList();
     ArrayList<Items> finalList = new ArrayList(6);
+
+    //take out items that cant be used
+    if (champion.getIsMelee()) {
+      for (int i = 0; i < items.size(); i ++) {
+        if (items.get(i).getItemName().equals("Rapid Firecannon")) {
+          items.remove(i);
+          i--;
+        }
+        if (items.get(i).getItemName().equals("Runaan's Hurricane")) {
+          items.remove(i);
+          i--;
+        }
+      }
+    }
+    else {
+      for (int i = 0; i < items.size(); i ++) {
+        if (items.get(i).getItemName().equals("Ravenous Hydra")) {
+          items.remove(i);
+          i--;
+        }
+        if (items.get(i).getItemName().equals("Titanic Hydra")) {
+          items.remove(i);
+          i--;
+        }
+      }
+    }
 
     //create array of boots
     for (int i = 0; i < items.size(); i ++) {
@@ -319,7 +344,7 @@ public class LeagueRandomizer {
     }
 
     //get a random jungle item and other items if has smite
-    if (hasSimte) {
+    if (hasSmite) {
       int jungleRNG = rng.nextInt(jungle.size());
       finalList.add(jungle.get(jungleRNG));
       for (int i = 0; i < 4; i++) {
@@ -350,7 +375,7 @@ public class LeagueRandomizer {
 
   public static void functionality() {
     Random rng = new Random();
-    String champion = null;
+    Champions champion = null;
     String lane = null;
     String summoner = null;
     String maxAbility = null;
@@ -361,8 +386,8 @@ public class LeagueRandomizer {
     //champ
     ArrayList<Champions> champions = championArrayListCreator();
     int championsRNG = rng.nextInt(champions.size());
-    champion = champions.get(championsRNG).championName;
-    System.out.println(champion);
+    champion = champions.get(championsRNG);
+    System.out.println(champion.getChampionName());
 
     //lane
     ArrayList<String> lanes = new ArrayList<>(Arrays.asList("Top","Mid","Bot","Support","Jungle"));
@@ -402,7 +427,7 @@ public class LeagueRandomizer {
     maxAbility = maxAbilities.get(maxAbilitiesRNG);
     System.out.println(maxAbility);
 
-    items(jungle);
+    items(jungle,champion);
 
     System.out.println();
     System.out.println("Type r to reroll:");

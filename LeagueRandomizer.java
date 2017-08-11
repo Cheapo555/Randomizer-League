@@ -418,8 +418,32 @@ public class LeagueRandomizer {
         summoners.remove(summonersRNG);
       }
     }
-
     System.out.println();
+
+    //masteries
+    int a;
+    int b;
+    int c = 18;
+    int aRNG = rng.nextInt(13);
+    a = aRNG;
+    b = 12 - a;
+
+    ArrayList<Integer> masteries = new ArrayList();
+    masteries.add(a);
+    masteries.add(b);
+    masteries.add(c);
+
+    for(int i = 0; i < 3; i++){
+    int masteriesRNG = rng.nextInt(masteries.size());
+    int masteriess = masteries.get(masteriesRNG);
+    masteries.remove(masteriesRNG);
+
+    System.out.print(masteriess);
+    if(i < 2){
+    System.out.print(" + ");
+    }
+    }
+    System.out.println(" ");
 
     //ability max
     ArrayList<String> maxAbilities = new ArrayList<>(Arrays.asList("Q Max","W Max","E Max"));
